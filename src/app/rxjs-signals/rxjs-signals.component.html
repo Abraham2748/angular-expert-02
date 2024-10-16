@@ -1,0 +1,13 @@
+<p>rxjs-signals works!</p>
+
+<h1>Obs: {{ ditto$ | async }}</h1>
+<h1>Signal: {{ dittoSignal() }}</h1>
+<br /><br />
+
+<h1>{{ name() }}</h1>
+<h2>{{ lastName() }}</h2>
+<h3>{{ completeName() }}</h3>
+<h4>Signal: {{ greeting() }}</h4>
+<h4>Obs: {{ greeting$ | async }}</h4>
+<button (click)="updateName()">Actualizar nombre</button>
+<button (click)="updateLastName()">Actualizar apellido</button>
