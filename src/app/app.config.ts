@@ -10,6 +10,8 @@ import { provideHttpClient } from '@angular/common/http';
 import { provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { ngrxReducer } from './ngrx/store/ngrx.reducer';
+import { provideEffects } from '@ngrx/effects';
+import { NgrxEffect } from './ngrx/store/ngrx.effects';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -17,6 +19,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideHttpClient(),
     provideStore({ main: ngrxReducer }),
+    provideEffects(NgrxEffect),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
   ],
 };

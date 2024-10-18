@@ -1,1 +1,25 @@
 <p>ngrx works!</p>
+
+<h1>Counter: {{ counter$ | async }}</h1>
+
+<button (click)="setCounterTo10()">Set Counter to 10</button>
+<br />
+<br />
+
+<span>{{ obj1 | json }}</span>
+
+<br />
+<br />
+
+<span>{{ obj2 | json }}</span>
+
+<h2>Message: {{ message$ | async }}</h2>
+<label [for]="messageInput">Set new message</label>
+<input type="text" #messageInput />
+<button (click)="setNewMessage(messageInput.value)">Set</button>
+
+<br />
+<br />
+
+<h1>User Name: {{ userName$ | async }}</h1>
+<button (click)="getUserNameFromStore()">Get User Name</button>

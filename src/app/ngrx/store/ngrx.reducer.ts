@@ -1,5 +1,6 @@
-import { createReducer } from '@ngrx/store';
+import { createReducer, on } from '@ngrx/store';
 import { NgrxState } from './ngrx.state';
+import { setCounter, setMessage, setUserName } from './ngrx.actions';
 
 const initialState: NgrxState = {
   counter: 0,
@@ -15,4 +16,15 @@ const initialState: NgrxState = {
   },
 };
 
-export const ngrxReducer = createReducer(initialState);
+export const ngrxReducer = createReducer(
+  initialState,
+  on(setCounter, (state, { newValue }) => ({ ...state, counter: newValue })),
+  on(setMessage, (state, { newMessage }) => ({
+    ...state,
+    message: newMessage,
+  })),
+  on(setUserName, (state, { newName }) => ({
+    ...state,
+    user: { ...state.user, name: newName },
+  }))
+);
