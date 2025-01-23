@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
+import { NgrxComponent } from './ngrx/ngrx.component';
+
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [],
+  imports: [NgrxComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
